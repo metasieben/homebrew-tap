@@ -22,6 +22,9 @@ class Mpv < Formula
   depends_on "vapoursynth"
   depends_on "youtube-dl"
 
+  depends_on "jack" => :optional
+  depends_on "libaacs" => :optional
+  depends_on "libcaca" => :optional
   depends_on "libdvdnav" => :optional
   depends_on "libdvdread" => :optional
 
@@ -31,15 +34,18 @@ class Mpv < Formula
     # or getdefaultlocale in docutils. Force the default c/posix locale since
     # that's good enough for building the manpage.
     ENV["LC_ALL"] = "C"
+    ENV.O3
 
     args = %W[
       --prefix=#{prefix}
       --enable-html-build
       --enable-javascript
       --enable-libmpv-shared
+
       --enable-lua
       --enable-libarchive
       --enable-uchardet
+
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
