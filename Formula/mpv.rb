@@ -22,6 +22,10 @@ class Mpv < Formula
   depends_on "vapoursynth"
   depends_on "youtube-dl"
 
+  depends_on "libdvdnav" => :optional
+  depends_on "libdvdread" => :optional
+
+
   def install
     # LANG is unset by default on macOS and causes issues when calling getlocale
     # or getdefaultlocale in docutils. Force the default c/posix locale since
@@ -43,6 +47,10 @@ class Mpv < Formula
       --enable-zsh-comp
       --zshdir=#{zsh_completion}
     ]
+
+    args << "--enable-dvdnav" if build.with? "libdvdnav"
+    args << "--enable-dvdread" if build.with? "libdvdread"
+
 
     system "./bootstrap.py"
     system "python3", "waf", "configure", *args
