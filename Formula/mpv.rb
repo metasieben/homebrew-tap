@@ -26,7 +26,7 @@ class Mpv < Formula
   depends_on "libaacs" => :optional
   depends_on "libcaca" => :optional
   depends_on "libdvdnav" => :optional
-  depends_on "libdvdread" => :optional
+  #depends_on "libdvdread" => :optional
 
 
   def install
@@ -55,7 +55,7 @@ class Mpv < Formula
     ]
 
     args << "--enable-dvdnav" if build.with? "libdvdnav"
-    args << "--enable-dvdread" if build.with? "libdvdread"
+    #args << "--enable-dvdread" if build.with? "libdvdread"
 
 
     system "./bootstrap.py"
