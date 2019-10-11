@@ -50,8 +50,6 @@ class Mpv < Formula
       --datadir=#{pkgshare}
       --mandir=#{man}
       --docdir=#{doc}
-      --enable-zsh-comp
-      --zshdir=#{zsh_completion}
     ]
 
     args << "--enable-dvdnav" if build.with? "libdvdnav"
