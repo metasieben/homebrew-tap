@@ -7,15 +7,6 @@ class StreamlinkAT170 < Formula
   sha256 "f87a62a47212d94769929bd040d9c186b461643bdbda06f839b99ec9efefb87a"
   license "BSD-2-Clause"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "de3e010cc4ccd2148aaf60d4d67135b3116865f1baa99332ba6d6bf65d5cbd26" => :big_sur
-    sha256 "9d30d27efae597ebec2d27cede356f013811e0930e487734dff308962363d500" => :arm64_big_sur
-    sha256 "94c9bbc54f6d4acd49a2e5d66e73a84ecb65a21d5c0728043bbaff512a4e8808" => :catalina
-    sha256 "e258065cdaa91ea8b28ee8821200981596285160bf62f81f809c8eeb8409341b" => :mojave
-    sha256 "63ae898d941b2e92fff7f8d79c36e2f69a47cd4201055bad72770483a8e0fc70" => :high_sierra
-  end
-
   depends_on "python@3.9"
 
   uses_from_macos "libffi"
