@@ -9,15 +9,15 @@ class Mpv < Formula
   depends_on "docutils" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
-  #depends_on xcode: :build
+  depends_on xcode: :build
 
   depends_on "ffmpeg"
   depends_on "jpeg"
   depends_on "libarchive"
   depends_on "libass"
   depends_on "little-cms2"
-  #depends_on "lua@5.1"
-  depends_on "luajit"
+  depends_on "lua@5.1"
+  #depends_on "luajit"
   depends_on "mujs"
   depends_on "uchardet"
   depends_on "vapoursynth"
@@ -51,7 +51,7 @@ class Mpv < Formula
       --mandir=#{man}
       --docdir=#{doc}
       --zshdir=#{zsh_completion}
-      --lua=lua52
+      --lua=lua51deb
     ]
 
     args << "--enable-dvdnav" if build.with? "libdvdnav"
