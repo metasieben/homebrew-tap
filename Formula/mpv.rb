@@ -16,7 +16,8 @@ class Mpv < Formula
   depends_on "libarchive"
   depends_on "libass"
   depends_on "little-cms2"
-  depends_on "lua@5.1"
+  #depends_on "lua@5.1"
+  depends_on "luajit"
   depends_on "mujs"
   depends_on "uchardet"
   depends_on "vapoursynth"
@@ -50,8 +51,8 @@ class Mpv < Formula
       --mandir=#{man}
       --docdir=#{doc}
       --zshdir=#{zsh_completion}
-      --lua=51deb
     ]
+    # --lua=51deb
 
     args << "--enable-dvdnav" if build.with? "libdvdnav"
     #args << "--enable-dvdread" if build.with? "libdvdread"
