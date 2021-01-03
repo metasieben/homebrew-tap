@@ -51,8 +51,8 @@ class Mpv < Formula
       --mandir=#{man}
       --docdir=#{doc}
       --zshdir=#{zsh_completion}
+      --lua=luajit
     ]
-    # --lua=51deb
 
     args << "--enable-dvdnav" if build.with? "libdvdnav"
     #args << "--enable-dvdread" if build.with? "libdvdread"
