@@ -7,7 +7,7 @@ class StreamlinkAT170 < Formula
   sha256 "f87a62a47212d94769929bd040d9c186b461643bdbda06f839b99ec9efefb87a"
   license "BSD-2-Clause"
 
-  keg_only :versioned_formulae
+  keg_only :versioned_formula
 
   depends_on "python@3.9"
 
