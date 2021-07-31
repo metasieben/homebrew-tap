@@ -21,7 +21,7 @@ class PqivAT212 < Formula
     system "./configure", "--prefix=#{prefix}", "--without-poppler", "--without-spectre"
     system "make"
     system "make", "pqiv.app"
-    system "make", "install"
+    #system "make", "install"
   end
 
   test do
