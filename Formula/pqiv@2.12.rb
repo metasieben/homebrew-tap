@@ -18,7 +18,7 @@ class PqivAT212 < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--backends-build=shared", "--without-archive_cbx"
+    system "./configure", "--prefix=#{prefix}", "--without-poppler", "--without-spectre"
     system "make", "install"
   end
 
