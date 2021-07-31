@@ -19,6 +19,7 @@ class PqivAT212 < Formula
 
   def install
     system "./configure", "--prefix=#{prefix}", "--without-poppler", "--without-spectre"
+    system "make", "pqiv.app"
     system "make", "install"
   end
 
