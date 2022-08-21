@@ -61,9 +61,9 @@ class Mpv < Formula
     args << "--enable-dvdnav" if build.with? "libdvdnav"
     #args << "--enable-dvdread" if build.with? "libdvdread"
 
-    system Formula["python@3.9"].opt_bin/"python3", "bootstrap.py"
-    system Formula["python@3.9"].opt_bin/"python3", "waf", "configure", *args
-    system Formula["python@3.9"].opt_bin/"python3", "waf", "install"
+    system Formula["python@3.9"].opt_bin/"python3.9", "bootstrap.py"
+    system Formula["python@3.9"].opt_bin/"python3.9", "waf", "configure", *args
+    system Formula["python@3.9"].opt_bin/"python3.9", "waf", "install"
   end
 
   test do
