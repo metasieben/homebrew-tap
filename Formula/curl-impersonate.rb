@@ -23,6 +23,8 @@ class CurlImpersonate < Formula
     mkdir "build" do
       system "../configure"
 
+      system "pip3", "install", "gyp-next"
+
       ENV.deparallelize do
         system "gmake", "firefox-build"
       end
