@@ -12,6 +12,8 @@ class CurlImpersonate < Formula
   depends_on "make" => :build
   depends_on "ninja" => :build
 
+  depends_on "python" => :build
+
   #depends_on "go" # for chrome only
   depends_on "libidn2"
   depends_on "rtmpdump"
