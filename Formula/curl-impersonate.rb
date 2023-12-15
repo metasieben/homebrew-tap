@@ -12,7 +12,7 @@ class CurlImpersonate < Formula
   depends_on "make" => :build
   depends_on "ninja" => :build
 
-  #depends_on "python" => :build
+  depends_on "pipx" => :build
 
   #depends_on "go" # for chrome only
   depends_on "libidn2"
@@ -21,17 +21,13 @@ class CurlImpersonate < Formula
 
   uses_from_macos "python" => :build
 
-  def python3
-    "python3.12"
-  end
- 
   def install
     inreplace "configure", %r{/usr/local}, prefix
 
     mkdir "build" do
       system "../configure"
 
-      system python3, "-m", "pip", "install", "gyp-next", "."
+      system "pipx", "install", "gyp-next"
 
       ENV.deparallelize do
         system "gmake", "firefox-build"
