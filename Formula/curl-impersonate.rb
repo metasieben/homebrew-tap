@@ -27,6 +27,9 @@ class CurlImpersonate < Formula
     mkdir "build" do
       system "../configure"
 
+      python3 = "python3.11"
+      ENV.prepend_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
+      
       system "pipx", "install", "gyp-next"
 
       ENV.deparallelize do
