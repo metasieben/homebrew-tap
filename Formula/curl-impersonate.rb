@@ -21,6 +21,10 @@ class CurlImpersonate < Formula
 
   uses_from_macos "python" => :build
 
+  def python3
+    "python3.12"
+  end
+ 
   def install
     inreplace "configure", %r{/usr/local}, prefix
 
